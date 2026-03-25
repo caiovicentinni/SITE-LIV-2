@@ -23,7 +23,7 @@ section { padding: 100px 0; }
 /* HEADER */
 .main-header { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(7, 7, 8, 0.8); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .header-container { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 110px; }
+.logo-img { height: 80px; }
 .nav-menu ul { display: flex; list-style: none; gap: 30px; align-items: center; }
 .nav-menu a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
 .nav-menu a:hover { color: var(--accent); }
