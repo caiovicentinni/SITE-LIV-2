@@ -153,6 +153,10 @@ h4 {
     padding: 6px;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 .hamburger-line {
     width: 24px;
     height: 2px;
@@ -620,13 +624,13 @@ h1 {
     background: var(--accent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
-        padding: 0 var(--space-sm);
+        padding: 0 20px;
     }
 
     section {
-        padding: var(--space-lg) 0;
+        padding: 72px 0;
     }
 
     .main-header {
@@ -634,7 +638,7 @@ h1 {
     }
 
     .logo-img {
-        height: 50px;
+        height: 56px;
     }
 
     .mobile-menu-toggle {
@@ -643,9 +647,11 @@ h1 {
 
     .nav-menu {
         position: fixed;
-        top: 72px;
+        top: 78px;
         left: 0;
         width: 100%;
+        max-height: calc(100dvh - 78px);
+        overflow-y: auto;
         background: rgba(7, 7, 8, 0.96);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         transform: translateY(-120%);
@@ -666,17 +672,82 @@ h1 {
         gap: 12px;
     }
 
-    .nav-menu a {
+    .nav-menu li {
         width: 100%;
+    }
+
+    .nav-menu a,
+    .nav-btn {
+        width: 100%;
+        display: block;
         text-align: center;
-        padding: 10px 12px;
+        padding: 11px 12px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.03);
     }
 
     .hero {
         min-height: auto;
-        padding: 110px 0 var(--space-xl);
+        padding: 120px 0 var(--space-xl);
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+
+    #chatbot-window {
+        width: min(92vw, 360px);
+        height: 410px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero .container {
+        padding-top: 84px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sol-card {
+        padding: 30px 22px;
+    }
+
+    .stat-card {
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-sm);
+    }
+
+    section {
+        padding: 56px 0;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .nav-menu {
+        top: 70px;
+        max-height: calc(100dvh - 70px);
+    }
+
+    .hero {
+        padding: 106px 0 var(--space-lg);
     }
 
     h1 {
@@ -700,8 +771,7 @@ h1 {
     }
 
     .grid-2 {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 
     .about-stats {
@@ -752,26 +822,8 @@ h1 {
 
     #chatbot-window {
         width: min(92vw, 330px);
-        height: 390px;
+        height: 380px;
         right: 0;
         bottom: 68px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .hero .container {
-        padding-top: 88px;
-    }
-
-    .solutions-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    #chatbot-window {
-        width: 340px;
     }
 }
