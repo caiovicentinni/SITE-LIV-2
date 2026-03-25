@@ -256,6 +256,18 @@ h1 {
     align-items: center;
 }
 
+.contact .grid-2 {
+    grid-template-areas: "info form";
+}
+
+.contact-info {
+    grid-area: info;
+}
+
+.contact-form-wrapper {
+    grid-area: form;
+}
+
 .about-content {
     text-align: center;
     max-width: 760px;
@@ -698,6 +710,17 @@ h1 {
     .grid-2 {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
+    }
+
+    .contact .grid-2 {
+        grid-template-areas:
+            "info"
+            "form";
+    }
+
+    .contact-form-wrapper {
+        width: 100%;
+        margin-top: var(--space-sm);
     }
 
     .about-stats {
